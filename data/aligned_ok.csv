@@ -1,0 +1,34 @@
+cluster_id,member_path,inliers,warped_ok,note
+DIE_02,photos/staging_first500/First 500/20260815_035901.jpg,0,True,representative
+DIE_02,photos/staging_first500/First 500/20260815_035908.jpg,19,True,good=58 inl=19 area_ratio=1.00
+DIE_03,photos/staging_first500/First 500/20260815_040913.jpg,0,True,representative
+DIE_03,photos/staging_first500/First 500/20260815_040921.jpg,30,True,good=58 inl=30 area_ratio=0.88
+DIE_05,photos/staging_first500/First 500/20260815_042502.jpg,0,True,representative
+DIE_05,photos/staging_first500/First 500/20260815_042516.jpg,506,True,good=535 inl=506 area_ratio=0.99
+DIE_05,photos/staging_first500/First 500/IMG_0028.PNG,24,False,DEGENERATE_WARP good=43 inl=24 area_ratio=0.00
+DIE_06,photos/staging_first500/First 500/20260815_042836.jpg,0,True,representative
+DIE_06,photos/staging_first500/First 500/20260815_042845.jpg,267,True,good=291 inl=267 area_ratio=1.01
+DIE_08,photos/staging_first500/First 500/20260815_042922.jpg,0,True,representative
+DIE_08,photos/staging_first500/First 500/20260815_042930.jpg,400,True,good=427 inl=400 area_ratio=1.00
+DIE_08,photos/staging_first500/First 500/IMG_0114.JPG,20,False,DEGENERATE_WARP good=33 inl=20 area_ratio=0.00
+DIE_11,photos/staging_first500/First 500/20260816_150054.jpg,0,True,representative
+DIE_11,photos/staging_first500/First 500/20260816_150058.jpg,21,True,good=52 inl=21 area_ratio=1.01
+DIE_16,photos/staging_first500/First 500/20260816_152047.jpg,0,True,representative
+DIE_16,photos/staging_first500/First 500/Screenshot_20260815_102200_Photos.jpg,39,False,DEGENERATE_WARP good=52 inl=39 area_ratio=0.00
+DIE_18,photos/staging_first500/First 500/IMG_0054.PNG,0,True,representative
+DIE_18,photos/staging_first500/First 500/IMG_0055.PNG,155,True,good=202 inl=155 area_ratio=1.00
+DIE_20,photos/staging_first500/First 500/IMG_0105.PNG,0,True,representative
+DIE_20,photos/staging_first500/First 500/IMG_0106.PNG,420,True,good=876 inl=420 area_ratio=1.00
+DIE_20,photos/staging_first500/First 500/IMG_0107.PNG,443,True,good=555 inl=443 area_ratio=0.98
+DIE_20,photos/staging_first500/First 500/IMG_0108.PNG,402,True,good=536 inl=402 area_ratio=1.01
+DIE_20,photos/staging_first500/First 500/IMG_0109.PNG,414,True,good=509 inl=414 area_ratio=1.00
+DIE_20,photos/staging_first500/First 500/IMG_0110.PNG,423,True,good=563 inl=423 area_ratio=1.00
+DIE_21,photos/staging_first500/First 500/Messenger_creation_38540D8A-CE28-484A-B0B0-C946B218C6F8.jpeg,0,True,representative
+DIE_21,photos/staging_first500/First 500/Messenger_creation_4DC0A357-91A7-494C-BB13-214FBCF34FAC.jpeg,85,True,good=107 inl=85 area_ratio=1.24
+DIE_21,photos/staging_first500/First 500/Messenger_creation_E1A47969-2930-4005-9AF4-919E74A04326.jpeg,73,True,good=90 inl=73 area_ratio=0.99
+DIE_24,photos/staging_first500/First 500/Screenshot_20260815_094304_Reddit.jpg,0,True,representative
+DIE_24,photos/staging_first500/First 500/Screenshot_20260815_094310_Reddit.jpg,51,True,good=94 inl=51 area_ratio=1.00
+DIE_24,photos/staging_first500/First 500/Screenshot_20260815_094315_Reddit.jpg,59,True,good=103 inl=59 area_ratio=1.00
+DIE_24,photos/staging_first500/First 500/Screenshot_20260815_094320_Reddit.jpg,52,True,good=88 inl=52 area_ratio=1.00
+DIE_24,photos/staging_first500/First 500/Screenshot_20260815_094324_Reddit.jpg,71,True,good=114 inl=71 area_ratio=1.00
+DIE_24,photos/staging_first500/First 500/Screenshot_20260815_094329_Reddit.jpg,102,True,good=165 inl=102 area_ratio=1.00
