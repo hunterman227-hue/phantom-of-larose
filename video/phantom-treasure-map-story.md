@@ -1,0 +1,49 @@
+# The Phantom of LaRose — Treasure Map Story
+
+## The voyage
+
+The Mayflower leaves on her voyage, bound for wherever she is bound. She is a sound ship and her crew is steady. But out on the open water the sky turns on her. Bad weather rolls in fast, black clouds stacking up, the sea rising, and the ship is driven off her line.
+
+## The lightning
+
+Then the lightning comes. One bolt, straight down out of the storm, and it strikes the mast right there by the U, tearing down the front of the mast. That strike is what does it. The Mayflower veers off course. Her steering is ruined, her heading is gone, and she is lost.
+
+## The bayou
+
+Lost, she drifts until she finds the mouth of the bayou, right there where Jean Lafitte comes up in Bayou Lafourche. She noses into the bayou and comes up it slow, and she lands right there in LaRose. The anchor rides at the front of the boat, right on the front of the mast, and it never leaves. Through the whole story, the anchor is there.
+
+## The cypress knee
+
+Coming down the bayou, the hull strikes a cypress knee, dead on. The knee splits the hull with a crack that runs straight down the middle of the boat. Water starts coming in. The strike throws the ship sideways and she veers off into the swamps.
+
+## The jerk
+
+When the boat hits that cypress knee, it jerks hard. The pilgrim man is thrown forward and his head strikes the mast. The lady pilgrim is thrown too, and her bonnet snags on the broken rigging and tears. That tear is the bonnet crack.
+
+## Getting out
+
+They have to get out. The boat is taking water and the swamp is closing in. The man climbs over the side first. He grabs the splintered gunwale with his left hand to steady himself, and a splinter drives deep into his left pinky.
+
+## The snake
+
+The moment his feet hit the swamp water, the snake strikes. It bites him on one foot, then the other foot. Two bites. Those two bites are the two die chips under the two and the six in the date.
+
+## The fall
+
+The venom and the pain drop him. He falls hard and his head strikes again, and now he is truly dizzy. The world will not sit still. Everything doubles and smears. That dizziness is the blurred letters and the blurred faces.
+
+## The mosquito
+
+Dizzy and bleeding, he puts his arm around the lady pilgrim to hold himself up. The movement stirs the swamp air, and a mosquito lands on her arm. She slaps it flat. That slap is the mosquito bite.
+
+## The swamp
+
+They push on through the cypress swamp together, and the swamp fights them for every step. Low branches and sharp palmetto fronds whip across their faces as they force their way through, leaving thin lines across the nose. Those are the die cracks across the nose.
+
+## The phantom
+
+And the whole time, on the back of the boat, on the reverse, the phantom is materializing. With every strike, every crack, every bite, it grows a little more out of the wood at the front of the mast. First the duck head. Then the half phantom. And at the end of the map, where the X is, the full Phantom of LaRose.
+
+## X marks the phantom
+
+In order to get to the phantom, you have to carry every marker with you. The anchor. The die chips. The cracks. All of it. The map does not give up the phantom to anyone missing a single mark.
