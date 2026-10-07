@@ -79,7 +79,7 @@
   <p class="table-caption"><strong>Table 1.</strong> Forensic registry of die-failure
   observations, 2026 Mayflower Compact quarter audit. Positions <em>x</em> and
   <em>y</em> are normalized map coordinates.</p>
-  <div class="controls">Click a column heading to sort &uarr;&darr;. Click again to reverse.</div>
+  <div class="controls">Table loads ordered by <em>x</em>, then <em>y</em>. Click a column heading to sort &uarr;&darr;. Click again to reverse.</div>
   <div id="status" role="status"></div>
   <div class="table-wrap">
     <table id="registry" aria-label="Forensic numismatic registry">
@@ -107,6 +107,7 @@
   var rows = [];
   var sortCol = -1;
   var sortDir = 1;
+  var xCol = -1, yCol = -1; /* set from header names after load */
 
   /* Parse CSV text: split on line breaks, then on commas,
      honoring double-quoted fields ("" = literal quote). */
@@ -174,7 +175,14 @@
     if(sortCol >= 0){
       var numeric = isNumericCol(sortCol);
       var idx = sortCol;
-      data.sort(function(a, b){ return cmp(a, b, idx, numeric); });
+      data.sort(function(a, b){
+        var r = cmp(a, b, idx, numeric);
+        /* Tie-break: rows sharing an X value order by Y. */
+        if(r === 0 && idx === xCol && yCol >= 0){
+          r = cmp(a, b, yCol, isNumericCol(yCol));
+        }
+        return r;
+      });
     }
     bodyRows.innerHTML = '';
     var frag = document.createDocumentFragment();
@@ -207,6 +215,10 @@
       headers = parsed[0];
       rows = parsed.slice(1);
       metaEl.textContent = rows.length + ' observations loaded from registry.csv.';
+      /* Default order: X axis, then Y axis. */
+      xCol = headers.indexOf('x');
+      yCol = headers.indexOf('y');
+      if(xCol >= 0){ sortCol = xCol; sortDir = 1; }
       renderHead();
       renderBody();
     })
