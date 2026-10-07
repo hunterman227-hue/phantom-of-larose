@@ -1,0 +1,49 @@
+coin_id,source_photo,face,anomaly_type,x,y,die_attribution,notes
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,die crack,14.7,87.1,composite,"composite map pt 1/9 along rim-to-rim date crack; features collected across specimens, not proven on one die"
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,die crack,24.1,79.8,composite,"composite map pt 2/9 along rim-to-rim date crack; features collected across specimens, not proven on one die"
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,die crack,33.5,77.0,composite,"composite map pt 3/9 along rim-to-rim date crack; features collected across specimens, not proven on one die"
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,die crack,42.9,74.9,composite,"composite map pt 4/9 along rim-to-rim date crack; features collected across specimens, not proven on one die"
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,die crack,52.2,73.2,composite,"composite map pt 5/9 along rim-to-rim date crack; features collected across specimens, not proven on one die"
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,die crack,61.6,71.8,composite,"composite map pt 6/9 along rim-to-rim date crack; features collected across specimens, not proven on one die"
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,die crack,71.0,70.7,composite,"composite map pt 7/9 along rim-to-rim date crack; features collected across specimens, not proven on one die"
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,die crack,80.4,72.7,composite,"composite map pt 8/9 along rim-to-rim date crack; features collected across specimens, not proven on one die"
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,die crack,89.8,78.5,composite,"composite map pt 9/9 along rim-to-rim date crack; features collected across specimens, not proven on one die"
+COIN-COMP-OBV,photos/2026-09-17_obverse-crack-template.jpg,obverse,field mark,5.1,48.7,composite,small unconfirmed field mark left of RS initials (composite map)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,5.8,59.1,composite,composite map pt 1/6 along left-rim diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,7.2,63.9,composite,composite map pt 2/6 along left-rim diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,6.8,68.6,composite,composite map pt 3/6 along left-rim diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,7.2,73.3,composite,composite map pt 4/6 along left-rim diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,7.7,78.1,composite,composite map pt 5/6 along left-rim diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,8.3,82.8,composite,composite map pt 6/6 along left-rim diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,8.9,64.9,composite,composite map pt 1/4 along second diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,10.4,68.9,composite,composite map pt 2/4 along second diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,10.7,73.0,composite,composite map pt 3/4 along second diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,11.0,77.1,composite,composite map pt 4/4 along second diagonal crack (multi-specimen composite)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,48.6,36.4,composite,short crack tick at rigging/mast convergence (composite map)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,9.5,56.2,composite,field crack dash 1/3 below U in UNITED (composite map; clearest reverse feature)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,13.9,56.2,composite,field crack dash 2/3 below U in UNITED (composite map; clearest reverse feature)
+COIN-COMP-REV,photos/2026-09-17_reverse-crack-template-all-cracks.jpg,reverse,die crack,18.3,56.2,composite,field crack dash 3/3 below U in UNITED (composite map; clearest reverse feature)
+COIN-001,.jarvis/takeout-parts/part1/Takeout/Google Photos/Micro Shots/20260904_150355.jpg,rim,finning,,,uncertain,"CLEAR finning, moderate-strong; 21-photo microscope-screen session 2026-09-04 ~15:02-15:07. UNPLACEABLE: edge-on microscope view, face undetermined"
+COIN-002,photos/first500/first500-362.jpg,obverse,finning,86.5,71.5,uncertain,"MAYBE finning (maybe-moderate): rough irregular bright raised metal, right rim near TRUST 2026"
+COIN-003,.jarvis/takeout-parts/part1/Takeout/Google Photos/Die 1 Marker/IMG03858.jpg,reverse,finning,91.5,92.5,uncertain,"MAYBE finning (maybe-moderate): distinct raised bright lip, bottom rim near COM. Album named Die 1 Marker but markers not verified on this photo"
+COIN-004,.jarvis/takeout-parts/part1/Takeout/Google Photos/strike through in Hull/CM260406-160858072.jpg,reverse,finning,50.0,92.5,uncertain,"MAYBE finning (maybe-moderate): thin bright raised ridge, bottom rim below LIBE/AYFLOWE"
+COIN-004,.jarvis/takeout-parts/part1/Takeout/Google Photos/strike through in Hull/CM260406-160858072.jpg,reverse,strike-through,,,uncertain,strike-through in hull per album name; position not verified on template
+COIN-005,.jarvis/takeout-parts/part1/Takeout/Google Photos/bayou bruise /20260420_173121.jpg,reverse,finning,13.0,77.0,uncertain,MAYBE finning (maybe-light): left/bottom rim slightly flared and bright
+COIN-006,.jarvis/takeout-parts/part1/Takeout/Google Photos/bayou bruise /20260420_194919.jpg,reverse,finning,38.0,93.5,uncertain,"MAYBE finning (maybe-light): bottom rim, uneven bright line"
+COIN-007,.jarvis/takeout-parts/part1/Takeout/Google Photos/initial clash/IMG_20260430_162953.jpg,reverse,finning,15.0,78.0,uncertain,"MAYBE finning (maybe-light): left rim near LINU, thin bright line"
+COIN-008,.jarvis/takeout-parts/part1/Takeout/Google Photos/Untitled(1)/IMG_20260705_145929054.jpg,reverse,finning,6.0,50.0,uncertain,"MAYBE finning (maybe-light): left rim, thin bright raised-looking lip where reeding meets face"
+COIN-009,.jarvis/takeout-parts/part1/Takeout/Google Photos/Untitled(1)/IMG_20260602_175455.jpg,reverse,finning,93.5,50.0,uncertain,"MAYBE finning (maybe-light): right rim, bright line at reeded edge; template right rim is cut off in source photo"
+COIN-010,.jarvis/takeout-parts/part1/Takeout/Google Photos/Lower Mast crack/20260906_171036.jpg,reverse,finning,7.5,62.0,uncertain,"MAYBE finning (maybe-light): left rim, bright raised-looking line; mast crack per album name not verified on template"
+COIN-011,.jarvis/takeout-parts/part1/Takeout/Google Photos/initial clash/Screenshot_2026-05-07-05-39-30-018~5.jpg,reverse,finning,8.5,56.0,uncertain,"MAYBE finning (maybe-light): left rim, bright sharp ridge"
+COIN-012,.jarvis/takeout-parts/part1/Takeout/Google Photos/Untitled(1)/IMG_20260604_233452946.jpg,obverse,finning,70.0,92.0,uncertain,"MAYBE finning (maybe-light): bottom rim below WE TRUST, slightly raised bright line"
+COIN-013,photos/2026-09-13_phantom-larose-001_hand-closeup-arrows.jpg,obverse,die chip,70.0,44.5,Die-1 (user-claimed),Mosquito Bite: die chip on her left arm; position approximated from close-up marker photo
+COIN-013,photos/2026-09-13_phantom-larose-003_hand-detail-multi-arrows.jpg,obverse,die chip,53.0,52.5,Die-1 (user-claimed),Splinter: thin chip on pinky of male pilgrim finger; position approximated from close-up
+COIN-013,photos/2026-09-13_phantom-larose-004_die1-markers-reference.jpg,obverse,die chip,63.0,29.0,Die-1 (user-claimed),die chip on bonnet of female pilgrim; position approximated from reference screenshot
+COIN-013,photos/2026-09-13_phantom-larose-004_die1-markers-reference.jpg,obverse,die chip,43.0,77.5,Die-1 (user-claimed),die chip under the 2 in 2026 (snake bite); position approximated
+COIN-013,photos/2026-09-13_phantom-larose-004_die1-markers-reference.jpg,obverse,die chip,53.5,77.0,Die-1 (user-claimed),die chip under the 6 in 2026 (snake bite); position approximated
+COIN-013,photos/2026-09-13_phantom-larose-002_die-chip-arrows.jpg,obverse,die chip,50.5,54.5,Die-1 (user-claimed),die chip in drapery near clasped hands (verified in close-up); position approximated on template
+COIN-013,photos/2026-09-13_phantom-larose-005_doubling-red-lines.jpg,obverse,doubling,35.0,26.0,Die-1 (user-claimed),blurry/doubled profile per user red-line markup; position approximated from close-up
+COIN-013,photos/2026-09-13_phantom-larose-005_doubling-red-lines.jpg,obverse,doubling,65.0,84.5,Die-1 (user-claimed),blurry letters in motto per user markup; position approximated from close-up
+COIN-014,photos/2026-09-16_phantom-larose-015_reverse-d-mint.jpg,reverse,no anomaly,,,Denver (D mint),"normal strike, no anomaly visible; Denver die group - never forced into Die-1"
+COIN-015,.jarvis/takeout-parts/part1/Takeout/Google Photos/progression set number one/IMG_20260726_230404056~3.jpg,obverse,rim cud,89.5,69.0,uncertain,rim cud at right rim adjacent to S in TRUST per user red annotation; position approximated from rotated photo; user labels Very Late Die State
+COIN-015,.jarvis/takeout-parts/part1/Takeout/Google Photos/progression set number one/IMG_20260726_230404056~3.jpg,obverse,flow lines,6.0,35.0,uncertain,"radial flow lines per user yellow annotation, left rim; position approximated from rotated photo"

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Mayflower Quarter Audit &mdash; Forensic Numismatic Registry</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --paper:#fdfcf8; --rule:#c9c2b4;
+    --accent:#5a3d1e; --band:#f3efe4; --muted:#6b6455;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:Georgia,'Times New Roman',serif; line-height:1.55;
+  }
+  header{
+    border-bottom:3px double var(--rule); padding:2rem 1.5rem 1.25rem;
+    max-width:1100px; margin:0 auto;
+  }
+  header .kicker{
+    font-family:Arial,Helvetica,sans-serif; font-size:.75rem;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--muted);
+  }
+  h1{font-size:1.9rem; margin:.4rem 0 .2rem; color:var(--accent);}
+  header p{margin:.35rem 0; max-width:70ch;}
+  .meta{
+    font-family:Arial,Helvetica,sans-serif; font-size:.82rem; color:var(--muted);
+  }
+  main{max-width:1100px; margin:0 auto; padding:1.25rem 1.5rem 3rem;}
+  .table-caption{
+    font-style:italic; margin:0 0 .5rem; font-size:.95rem;
+  }
+  .table-caption strong{font-style:normal;}
+  .controls{
+    font-family:Arial,Helvetica,sans-serif; font-size:.85rem; color:var(--muted);
+    margin-bottom:.6rem;
+  }
+  #status{font-family:Arial,Helvetica,sans-serif; font-size:.85rem; margin-bottom:.6rem;}
+  #status.error{color:#8a1f1f;}
+  .table-wrap{overflow-x:auto; border:1px solid var(--rule);}
+  table{border-collapse:collapse; width:100%; font-size:.88rem;}
+  thead th{
+    background:var(--band); color:var(--accent);
+    font-family:Arial,Helvetica,sans-serif; font-size:.78rem;
+    letter-spacing:.04em; text-transform:uppercase;
+    padding:.6rem .7rem; text-align:left; white-space:nowrap;
+    border-bottom:2px solid var(--rule); cursor:pointer; user-select:none;
+  }
+  thead th:hover{background:#e9e2cf;}
+  thead th .arrow{font-size:.7em; margin-left:.3em;}
+  tbody td{
+    padding:.5rem .7rem; border-bottom:1px solid #e7e1d2; vertical-align:top;
+  }
+  tbody tr:nth-child(even){background:#faf7ee;}
+  tbody tr:hover{background:#f1ebda;}
+  td.num{font-variant-numeric:tabular-nums; white-space:nowrap;}
+  footer{
+    max-width:1100px; margin:0 auto; padding:1.5rem;
+    border-top:3px double var(--rule);
+    font-family:Arial,Helvetica,sans-serif; font-size:.78rem; color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">Forensic Numismatic Reference</div>
+  <h1>2026 Mayflower Quarter Audit</h1>
+  <p>Registry of macro-photo observations of mechanical die failure on the 2026
+  Mayflower Compact quarter. Each row is one recorded observation: the coin, the
+  source photograph, the face examined, the anomaly type, its mapped position,
+  the die attribution, and the examiner&rsquo;s note. Click any column heading
+  to sort the table.</p>
+  <div class="meta" id="metaLine">Loading registry&hellip;</div>
+</header>
+
+<main>
+  <p class="table-caption"><strong>Table 1.</strong> Forensic registry of die-failure
+  observations, 2026 Mayflower Compact quarter audit. Positions <em>x</em> and
+  <em>y</em> are normalized map coordinates.</p>
+  <div class="controls">Click a column heading to sort &uarr;&darr;. Click again to reverse.</div>
+  <div id="status" role="status"></div>
+  <div class="table-wrap">
+    <table id="registry" aria-label="Forensic numismatic registry">
+      <thead><tr id="headRow"></tr></thead>
+      <tbody id="bodyRows"></tbody>
+    </table>
+  </div>
+</main>
+
+<footer>
+  Source file: <code>registry.csv</code> (loaded at page open). This table renders
+  exactly the rows present in that file &mdash; no rows added, none removed.
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var statusEl = document.getElementById('status');
+  var metaEl   = document.getElementById('metaLine');
+  var headRow  = document.getElementById('headRow');
+  var bodyRows = document.getElementById('bodyRows');
+  var table    = document.getElementById('registry');
+
+  var headers = [];
+  var rows = [];
+  var sortCol = -1;
+  var sortDir = 1;
+
+  /* Parse CSV text: split on line breaks, then on commas,
+     honoring double-quoted fields ("" = literal quote). */
+  function parseCSV(text){
+    var out = [], row = [], field = '', inQ = false, i, c;
+    text = text.replace(/^\uFEFF/, '');
+    for(i = 0; i < text.length; i++){
+      c = text[i];
+      if(inQ){
+        if(c === '"'){
+          if(text[i+1] === '"'){ field += '"'; i++; }
+          else { inQ = false; }
+        } else { field += c; }
+      } else if(c === '"'){ inQ = true; }
+      else if(c === ','){ row.push(field); field = ''; }
+      else if(c === '\r'){ /* skip */ }
+      else if(c === '\n'){ row.push(field); out.push(row); row = []; field = ''; }
+      else { field += c; }
+    }
+    if(field !== '' || row.length){ row.push(field); out.push(row); }
+    return out.filter(function(r){
+      return r.some(function(v){ return String(v).trim() !== ''; });
+    });
+  }
+
+  function isNumericCol(idx){
+    return rows.every(function(r){
+      var v = String(r[idx]).trim();
+      return v === '' || !isNaN(Number(v));
+    });
+  }
+
+  function cmp(a, b, idx, numeric){
+    var va = String(a[idx]).trim(), vb = String(b[idx]).trim();
+    if(numeric){
+      var na = va === '' ? -Infinity : Number(va);
+      var nb = vb === '' ? -Infinity : Number(vb);
+      return (na - nb) * sortDir;
+    }
+    return va.localeCompare(vb) * sortDir;
+  }
+
+  function renderHead(){
+    headRow.innerHTML = '';
+    headers.forEach(function(h, idx){
+      var th = document.createElement('th');
+      th.scope = 'col';
+      th.innerHTML = '';
+      th.appendChild(document.createTextNode(h));
+      var sp = document.createElement('span');
+      sp.className = 'arrow';
+      sp.textContent = (idx === sortCol) ? (sortDir === 1 ? ' \u25B2' : ' \u25BC') : '';
+      th.appendChild(sp);
+      th.addEventListener('click', function(){
+        if(sortCol === idx){ sortDir *= -1; }
+        else { sortCol = idx; sortDir = 1; }
+        renderBody(); renderHead();
+      });
+      headRow.appendChild(th);
+    });
+  }
+
+  function renderBody(){
+    var data = rows.slice();
+    if(sortCol >= 0){
+      var numeric = isNumericCol(sortCol);
+      var idx = sortCol;
+      data.sort(function(a, b){ return cmp(a, b, idx, numeric); });
+    }
+    bodyRows.innerHTML = '';
+    var frag = document.createDocumentFragment();
+    data.forEach(function(r){
+      var tr = document.createElement('tr');
+      r.forEach(function(val, cidx){
+        var td = document.createElement('td');
+        td.textContent = val;
+        if(cidx === sortCol){ td.style.background = 'rgba(90,61,30,0.06)'; }
+        if(!isNaN(Number(String(val).trim())) && String(val).trim() !== ''){
+          td.className += ' num';
+        }
+        tr.appendChild(td);
+      });
+      frag.appendChild(tr);
+    });
+    bodyRows.appendChild(frag);
+    statusEl.className = '';
+    statusEl.textContent = 'Showing ' + data.length + ' of ' + rows.length + ' observations.';
+  }
+
+  fetch('registry.csv')
+    .then(function(resp){
+      if(!resp.ok){ throw new Error('HTTP ' + resp.status); }
+      return resp.text();
+    })
+    .then(function(text){
+      var parsed = parseCSV(text);
+      if(!parsed.length){ throw new Error('empty file'); }
+      headers = parsed[0];
+      rows = parsed.slice(1);
+      metaEl.textContent = rows.length + ' observations loaded from registry.csv.';
+      renderHead();
+      renderBody();
+    })
+    .catch(function(err){
+      statusEl.className = 'error';
+      statusEl.textContent = 'Could not load registry.csv (' + err.message + '). ' +
+        'Place registry.csv in the same folder as this page and reload.';
+      metaEl.textContent = 'Registry not loaded.';
+    });
+})();
+</script>
+
+</body>
+</html>
