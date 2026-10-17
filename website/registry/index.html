@@ -84,6 +84,7 @@
   observations, 2026 Mayflower Compact quarter audit. Positions <em>x</em> and
   <em>y</em> are normalized map coordinates.</p>
   <div class="controls">Table loads ordered by <em>x</em>, then <em>y</em>. Click a column heading to sort &uarr;&darr;. Click again to reverse.</div>
+  <div class="controls"><label for="filterBox">Filter: </label><input id="filterBox" type="search" size="42" placeholder="Type to filter &mdash; try finning, reverse, COIN-013&hellip;"> <button id="filterClear" type="button">Clear</button></div>
   <div id="status" role="status"></div>
   <div class="table-wrap">
     <table id="registry" aria-label="Forensic numismatic registry">
@@ -204,8 +205,15 @@
     });
   }
 
+  var filterText = '';
   function renderBody(){
     var data = rows.slice();
+    if(filterText){
+      var needle = filterText.toLowerCase();
+      data = data.filter(function(r){
+        return r.join(' ').toLowerCase().indexOf(needle) >= 0;
+      });
+    }
     if(sortCol >= 0){
       var numeric = isNumericCol(sortCol);
       var idx = sortCol;
@@ -249,6 +257,15 @@
     statusEl.className = '';
     statusEl.textContent = 'Showing ' + data.length + ' of ' + rows.length + ' observations.';
   }
+
+  var fb = document.getElementById('filterBox');
+  fb.addEventListener('input', function(){
+    filterText = fb.value.replace(/^\s+|\s+$/g, '');
+    renderBody();
+  });
+  document.getElementById('filterClear').addEventListener('click', function(){
+    fb.value = ''; filterText = ''; renderBody();
+  });
 
   fetch('registry.csv')
     .then(function(resp){
