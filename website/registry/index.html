@@ -55,6 +55,9 @@
   tbody tr:nth-child(even){background:#faf7ee;}
   tbody tr:hover{background:#f1ebda;}
   td.num{font-variant-numeric:tabular-nums; white-space:nowrap;}
+  td.photo{padding:.4rem;}
+  td.photo img{width:120px; height:auto; display:block; border:1px solid var(--rule);}
+  th.photo{cursor:default;}
   footer{
     max-width:1100px; margin:0 auto; padding:1.5rem;
     border-top:3px double var(--rule);
@@ -71,7 +74,8 @@
   Mayflower Compact quarter. Each row is one recorded observation: the coin, the
   source photograph, the face examined, the anomaly type, its mapped position,
   the die attribution, and the examiner&rsquo;s note. Click any column heading
-  to sort the table.</p>
+  to sort the table. Every row carries its source photograph &mdash; click a
+  photo to see it larger.</p>
   <div class="meta" id="metaLine">Loading registry&hellip;</div>
 </header>
 
@@ -92,6 +96,8 @@
 <footer>
   Source file: <code>registry.csv</code> (loaded at page open). This table renders
   exactly the rows present in that file &mdash; no rows added, none removed.
+  Photographs are web-sized copies of the source photos named in each row;
+  the originals remain in the audit files.
 </footer>
 
 <script>
@@ -108,6 +114,30 @@
   var sortCol = -1;
   var sortDir = 1;
   var xCol = -1, yCol = -1; /* set from header names after load */
+  var srcCol = -1;
+  var PHOTO_MAP = {
+ "photos/2026-09-17_obverse-crack-template.jpg": "photos/2026-09-17_obverse-crack-template.jpg",
+ "photos/2026-09-17_reverse-crack-template-all-cracks.jpg": "photos/2026-09-17_reverse-crack-template-all-cracks.jpg",
+ "photos/first500/first500-362.jpg": "photos/first500-362.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/Micro Shots/20260904_150355.jpg": "photos/20260904_150355.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/Die 1 Marker/IMG03858.jpg": "photos/IMG03858.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/strike through in Hull/CM260406-160858072.jpg": "photos/CM260406-160858072.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/bayou bruise /20260420_173121.jpg": "photos/20260420_173121.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/bayou bruise /20260420_194919.jpg": "photos/20260420_194919.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/initial clash/IMG_20260430_162953.jpg": "photos/IMG_20260430_162953.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/Untitled(1)/IMG_20260705_145929054.jpg": "photos/IMG_20260705_145929054.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/Untitled(1)/IMG_20260602_175455.jpg": "photos/IMG_20260602_175455.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/Lower Mast crack/20260906_171036.jpg": "photos/20260906_171036.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/initial clash/Screenshot_2026-05-07-05-39-30-018~5.jpg": "photos/Screenshot_2026-05-07-05-39-30-018-5.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/Untitled(1)/IMG_20260604_233452946.jpg": "photos/IMG_20260604_233452946.jpg",
+ "photos/2026-09-13_phantom-larose-001_hand-closeup-arrows.jpg": "photos/2026-09-13_phantom-larose-001_hand-closeup-arrows.jpg",
+ "photos/2026-09-13_phantom-larose-002_die-chip-arrows.jpg": "photos/2026-09-13_phantom-larose-002_die-chip-arrows.jpg",
+ "photos/2026-09-13_phantom-larose-003_hand-detail-multi-arrows.jpg": "photos/2026-09-13_phantom-larose-003_hand-detail-multi-arrows.jpg",
+ "photos/2026-09-13_phantom-larose-004_die1-markers-reference.jpg": "photos/2026-09-13_phantom-larose-004_die1-markers-reference.jpg",
+ "photos/2026-09-13_phantom-larose-005_doubling-red-lines.jpg": "photos/2026-09-13_phantom-larose-005_doubling-red-lines.jpg",
+ "photos/2026-09-16_phantom-larose-015_reverse-d-mint.jpg": "photos/2026-09-16_phantom-larose-015_reverse-d-mint.jpg",
+ ".jarvis/takeout-parts/part1/Takeout/Google Photos/progression set number one/IMG_20260726_230404056~3.jpg": "photos/IMG_20260726_230404056-3.jpg"
+};
 
   /* Parse CSV text: split on line breaks, then on commas,
      honoring double-quoted fields ("" = literal quote). */
@@ -152,6 +182,10 @@
 
   function renderHead(){
     headRow.innerHTML = '';
+    var pth = document.createElement('th');
+    pth.scope = 'col'; pth.className = 'photo';
+    pth.textContent = 'Photo';
+    headRow.appendChild(pth);
     headers.forEach(function(h, idx){
       var th = document.createElement('th');
       th.scope = 'col';
@@ -188,6 +222,18 @@
     var frag = document.createDocumentFragment();
     data.forEach(function(r){
       var tr = document.createElement('tr');
+      var ptd = document.createElement('td');
+      ptd.className = 'photo';
+      var pfile = (srcCol >= 0) ? PHOTO_MAP[String(r[srcCol]).trim()] : null;
+      if(pfile){
+        var a = document.createElement('a');
+        a.href = pfile; a.target = '_blank'; a.rel = 'noopener';
+        var img = document.createElement('img');
+        img.src = pfile; img.alt = String(r[srcCol]);
+        img.loading = 'lazy';
+        a.appendChild(img); ptd.appendChild(a);
+      } else { ptd.textContent = '\u2014'; }
+      tr.appendChild(ptd);
       r.forEach(function(val, cidx){
         var td = document.createElement('td');
         td.textContent = val;
@@ -216,6 +262,7 @@
       rows = parsed.slice(1);
       metaEl.textContent = rows.length + ' observations loaded from registry.csv.';
       /* Default order: X axis, then Y axis. */
+      srcCol = headers.indexOf('source_photo');
       xCol = headers.indexOf('x');
       yCol = headers.indexOf('y');
       if(xCol >= 0){ sortCol = xCol; sortDir = 1; }
