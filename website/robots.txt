@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://hunterman227-hue.github.io/phantom-of-larose/sitemap.xml
+
+
+
